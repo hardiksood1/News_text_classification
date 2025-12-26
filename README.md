@@ -7,6 +7,7 @@ This repository contains a **minimal, production-focused NLP pipeline** for news
 
 ▶ Click the video below to see .
 
+https://github.com/hardiksood1/News_text_classification/blob/main/Demo.mp4
 
 ## 1️⃣ Training File
 
