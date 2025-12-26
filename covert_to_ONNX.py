@@ -4,7 +4,7 @@ from transformers import RobertaTokenizerFast, RobertaConfig, RobertaForSequence
 from safetensors.torch import load_file
 
 # Path to model directory
-model_dir = "/workspace/mha/mha/roberta_text_classifier"
+model_dir = "/roberta_text_classifier"
 
 # Load tokenizer
 tokenizer = RobertaTokenizerFast.from_pretrained(model_dir)
