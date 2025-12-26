@@ -38,7 +38,7 @@ import numpy as np
 import joblib
 
 # 1. Load your data
-df = pd.read_excel('/workspace/mha/merged_output.xlsx')  # Ensure columns: 'Information', 'Subcategory'
+df = pd.read_excel('./merged_output.xlsx')  # Ensure columns: 'Information', 'Subcategory'
 
 # 2. Encode labels
 le = LabelEncoder()
@@ -88,7 +88,7 @@ model = RobertaForSequenceClassification.from_pretrained(
 
 # 7. Training arguments
 training_args = TrainingArguments(
-    output_dir='./mha/results',
+    output_dir='./results',
     num_train_epochs=15,
     per_device_train_batch_size=8,
     per_device_eval_batch_size=16,
@@ -121,7 +121,7 @@ trainer.train()
 import os
 
 # Create the directory if it doesn't exist
-save_dir = './mha/roberta_text_classifier'
+save_dir = './roberta_text_classifier'
 if not os.path.exists(save_dir):
     os.makedirs(save_dir)
     
@@ -130,13 +130,13 @@ joblib.dump(le, os.path.join(save_dir, 'label_encoder.pkl'))
 model.save_pretrained(save_dir)
 tokenizer.save_pretrained(save_dir)
 # 11. Save model and tokenizer
-# joblib.dump(le, './mha/roberta_text_classifier/label_encoder.pkl')
-# model.save_pretrained('./mha/roberta_text_classifier')
-# tokenizer.save_pretrained('./mha/roberta_text_classifier')
+# joblib.dump(le, '.roberta_text_classifier/label_encoder.pkl')
+# model.save_pretrained('.roberta_text_classifier')
+# tokenizer.save_pretrained('.roberta_text_classifier')
 
 # 12. Load model and tokenizer for inference
-model = RobertaForSequenceClassification.from_pretrained('./mha/roberta_text_classifier')
-tokenizer = RobertaTokenizerFast.from_pretrained('./mha/roberta_text_classifier')
+model = RobertaForSequenceClassification.from_pretrained('./roberta_text_classifier')
+tokenizer = RobertaTokenizerFast.from_pretrained('./roberta_text_classifier')
 
 # 13. Test with input text
 def predict(text):
