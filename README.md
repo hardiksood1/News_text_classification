@@ -3,9 +3,9 @@
 This repository contains a **minimal, production-focused NLP pipeline** for news text classification using **RoBERTa**, converted to **ONNX** for fast inference and tested via a lightweight app/script.
 
 ---
-## 🎥 Demo (GitHub Auto-Play)
+## 🎥 Demo (download the demo video)
 
-▶ Click the video below to see .
+▶ Click the link below to download demo video.
 
 https://github.com/hardiksood1/News_text_classification/blob/main/Demo.mp4
 
